@@ -1,0 +1,305 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:context="http://www.springframework.org/schema/context"
+	xmlns:tx="http://www.springframework.org/schema/tx"
+	xmlns:aop="http://www.springframework.org/schema/aop"
+	xsi:schemaLocation="http://www.springframework.org/schema/tx  http://www.springframework.org/schema/tx/spring-tx-2.5.xsd
+         http://www.springframework.org/schema/aop  http://www.springframework.org/schema/aop/spring-aop-2.5.xsd 
+         http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context-2.5.xsd 
+	http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-2.5.xsd">
+
+
+	<!--数据源-->
+	<bean id="dataSource"
+		class="org.apache.commons.dbcp.BasicDataSource"
+		destroy-method="close">
+		<property name="driverClassName"
+			value="oracle.jdbc.driver.OracleDriver" />
+		<property name="url"
+			value="jdbc:oracle:thin:@localhost:1521:XE" />
+		<property name="username" value="hr" />
+		<property name="password" value="root" />
+	</bean>
+
+	<bean id="sessionFactory"
+		class="org.springframework.orm.hibernate3.LocalSessionFactoryBean">
+		<property name="dataSource" ref="dataSource" />
+		<property name="hibernateProperties">
+			<props>
+				<prop key="hibernate.dialect">
+					org.hibernate.dialect.Oracle9iDialect
+				</prop>
+				<prop key="hibernate.show_sql">true</prop>
+				<prop key="hibernate.format_sql">true</prop>
+			</props>
+		</property>
+		<property name="mappingResources">
+			<list>
+			    <value>com/neusoft/model/CareerInf.hbm.xml</value>
+			    <value>com/neusoft/model/DeptbackInf.hbm.xml</value>
+			    <value>com/neusoft/model/DeptInf.hbm.xml</value>
+			    <value>com/neusoft/model/DptrInf.hbm.xml</value>
+			    <value>com/neusoft/model/EmployeeInf.hbm.xml</value>
+			    <value>com/neusoft/model/FamilyRelation.hbm.xml</value>
+			    <value>com/neusoft/model/Language.hbm.xml</value>
+			    <value>com/neusoft/model/PeriodInf.hbm.xml</value>
+			    <value>com/neusoft/model/PostbackInf.hbm.xml</value>
+			    <value>com/neusoft/model/PostInf.hbm.xml</value>
+				<value>com/neusoft/model/Guestbook.hbm.xml</value>
+				<value>com/neusoft/model/Admin.hbm.xml</value>
+				<value>com/neusoft/model/TalentInf.hbm.xml</value>
+			</list>
+		</property>
+	</bean>
+	<!--	DAO   -->
+	
+	<bean id="probationDao"
+		class="com.neusoft.dao.impl.ProbationDaoImpl">
+		<property name="sessionFactory" ref="sessionFactory"></property>
+	</bean>
+	
+	<bean id="periodinfDao"
+		class="com.neusoft.dao.impl.PeriodInfHibernate">
+		<property name="sessionFactory" ref="sessionFactory"></property>
+
+	</bean>
+	
+	<bean id="deptinfDao"
+	       class="com.neusoft.dao.impl.DeptInfDaoImpl">
+	       <property name="sessionFactory" ref="sessionFactory"></property>
+	       </bean>
+	
+	<bean id="postinfDao"
+	class="com.neusoft.dao.impl.PostInfDaoImpl">
+	<property name="sessionFactory" ref="sessionFactory"></property>
+	</bean>
+
+	<bean id="adminDao" class="com.neusoft.dao.impl.AdminHibernate">
+		<property name="sessionFactory" ref="sessionFactory"></property>
+	</bean>
+	
+	<bean id="employeeInfDao" class="com.neusoft.dao.impl.EmployeeInfDaoHibernate">
+		<property name="sessionFactory" ref="sessionFactory"></property>
+	</bean>
+
+	<bean id="deptbackfindDaoImpl"
+		class="com.neusoft.dao.impl.DeptBackFindInfDaoImpl">
+		<property name="sessionFactory" ref="sessionFactory"></property>
+	</bean>
+	<bean id="postbackDaoImpl"
+		class="com.neusoft.dao.impl.PostbackDaoImpl">
+		<property name="sessionFactory" ref="sessionFactory"></property>
+	</bean>
+	
+	<bean id="deptbackDaoImpl"
+		class="com.neusoft.dao.impl.DeptBackDaoImpl">
+		<property name="sessionFactory" ref="sessionFactory"></property>
+	</bean>
+
+    
+	<bean id="postbackfindDaoImpl"
+		class="com.neusoft.dao.impl.PostbackfinndDaoImp">
+		<property name="sessionFactory" ref="sessionFactory"></property>
+	</bean>
+	
+	<bean id="familyDao" class="com.neusoft.dao.impl.FamilyHibernate">
+		<property name="sessionFactory" ref="sessionFactory"></property>
+	</bean>
+	
+	<bean id="careerDao" class="com.neusoft.dao.impl.CareerHibernate">
+		<property name="sessionFactory" ref="sessionFactory"></property>
+	</bean>
+	
+	<bean id="languageDao" class="com.neusoft.dao.impl.LanguageHibernate">
+		<property name="sessionFactory" ref="sessionFactory"></property>
+	</bean>
+	
+	
+	<!--	SERVICE   -->
+	<bean id="probationDaoService"
+		class="com.neusoft.service.impl.ProbationService">
+		<property name="probationDaoSer" ref="probationDao"></property>
+	</bean>
+	
+	<bean id="periodinfService"
+		class="com.neusoft.service.impl.PeriodInfServiceImpl">
+		<property name="periodinfDao" ref="periodinfDao"></property>
+	</bean>
+	
+	<bean id="deptinfService"
+	      class="com.neusoft.service.impl.DeptInfServiceImpl">
+	      <property name="deptinfDao" ref="deptinfDao"></property>
+	      </bean>
+	
+	<bean id="postinfService"
+	       class="com.neusoft.service.impl.PostInfServiceImpl">
+	       <property name="postinfDao" ref="postinfDao"></property>
+	</bean>
+	
+	<bean id="deptbackfindService"
+		class="com.neusoft.service.impl.PostbackfindServiceImpl">
+		<property name="deptBacFindkDao" ref="deptbackfindDaoImpl"></property>
+	</bean>
+	<bean id="postbackService"
+		class="com.neusoft.service.impl.PostbackServiceImpl">
+		<property name="postbackDao" ref="postbackDaoImpl"></property>
+	</bean>
+	
+	<bean id="deptbackService"
+		class="com.neusoft.service.impl.DeptBackServiceImpl">
+		<property name="deptBackDao" ref="deptbackDaoImpl"></property>
+	</bean>
+	
+	<bean id="postbackfindService"
+		class="com.neusoft.service.impl.PostbackfindServiceImpl">
+		<property name="keyPostfind" ref="postbackfindDaoImpl"></property>
+	</bean>
+
+	<bean id="adminService"
+		class="com.neusoft.service.impl.AdminServiceImpl">
+		<property name="adminDao" ref="adminDao"></property>
+	</bean>
+	
+	<bean id="employeeInfService" 
+		class="com.neusoft.service.impl.EmployeeInfServiceImpl">
+		<property name="empInfDao" ref="employeeInfDao"></property>
+	</bean>
+	
+	<bean id="familyService" class="com.neusoft.service.impl.FamilyServiceImpl">
+		<property name="familyDao" ref="familyDao"></property>
+	</bean>
+	
+	<bean id="careerService" class="com.neusoft.service.impl.CareerServiceImpl">
+		<property name="careerDao" ref="careerDao"></property>
+	</bean>
+	
+	<bean id="languageService" class="com.neusoft.service.impl.LanguageServiceImpl">
+		<property name="languageDao" ref="languageDao"></property>
+	</bean>
+
+	<!-- 事务管理器 -->
+	<bean name="transactionManager"
+		class="org.springframework.orm.hibernate3.HibernateTransactionManager">
+		<property name="sessionFactory" ref="sessionFactory"></property>
+	</bean>
+
+	<!-- 事务处理 -->
+	<aop:config>
+		<!-- 声明切入点 -->
+		<aop:pointcut id="txPointcut"
+			expression="execution(* com.neusoft.service.impl..*.*(..))" />
+		<aop:advisor advice-ref="txAdvice" pointcut-ref="txPointcut" />
+	</aop:config>
+
+	<!-- 声明事务通知advice -->
+	<tx:advice id="txAdvice" transaction-manager="transactionManager">
+		<tx:attributes>
+			<tx:method name="save*" />
+			<tx:method name="update*" />
+			<tx:method name="delete*" />
+		</tx:attributes>
+	</tx:advice>
+
+	<!--Action-->
+	<bean id="probationAction" class="com.neusoft.web.ProbationAction"
+		scope="prototype">
+		<property name="probationService" ref="probationDaoService"></property>
+	</bean>
+	
+	<bean id="periodinf" class="com.neusoft.web.PeriodInfAction"
+		scope="prototype">
+		<property name="periodinfService" ref="periodinfService"></property>
+	</bean>
+	
+	<bean id="deptbackfind" class="com.neusoft.web.PostbackfindAction"
+		scope="prototype">
+		<property name="keypostService" ref="deptbackfindService"></property>
+	</bean>
+	
+	<bean id="postback" class="com.neusoft.web.postbackAction"
+		scope="prototype">
+		<property name="postbackSer" ref="postbackService"></property>
+	</bean>
+	
+	<bean id="deptback" class="com.neusoft.web.DeptbackAction"
+		scope="prototype">
+		<property name="deptBackService" ref="deptbackService"></property>
+	</bean>
+	
+	<bean id="postbackfind" class="com.neusoft.web.PostbackfindAction"
+		scope="prototype">
+		<property name="keypostService" ref="postbackfindService"></property>
+	</bean>
+	
+	<bean id="updatedeptinf" class="com.neusoft.web.UpdateDeptInfAction"
+	      scope="prototype">
+	 <property name="deptinfService" ref="deptinfService"></property>     
+	       </bean>
+	       
+	<bean id="updatepostinf" class="com.neusoft.web.UpdatePostInfAction"
+	      scope="prototype">
+	<property name="postinfService" ref="postinfService"></property>
+	</bean>
+	
+	<bean id="deptinf" class="com.neusoft.web.DeptInfAction"
+	      scope="prototype">
+	 <property name="deptinfService" ref="deptinfService"></property>     
+	       </bean>
+	
+	<bean id="postinf" class="com.neusoft.web.PostInfAction"
+	      scope="prototype">
+	<property name="postinfService" ref="postinfService"></property>
+	</bean>
+	
+	<bean id="admin" class="com.neusoft.web.AdminAction"
+		scope="prototype">
+		<property name="adminService" ref="adminService"></property>
+	</bean>
+	
+	<bean id="employeeInf" class="com.neusoft.web.GetMessageAction"
+		scope="prototype">
+		<property name="emps" ref="employeeInfService"></property>
+	</bean>
+	
+	<bean id="addemployeeInf" class="com.neusoft.web.GetMessageJobAction"
+		scope="prototype">
+		<property name="emps" ref="employeeInfService"></property>
+	</bean>
+	
+	<bean id="empDetailedMessage" class="com.neusoft.web.GetDetailedMessageAction"
+		scope="prototype">
+		<property name="emps" ref="employeeInfService"></property>
+	</bean>
+	
+	<bean id="emp" class="com.neusoft.web.EmpAction"
+		scope="prototype">
+		<property name="emps" ref="employeeInfService"></property>
+	</bean>
+	
+	<bean id="emp_2" class="com.neusoft.web.UpdateEmpAction"
+		scope="prototype">
+		<property name="emps" ref="employeeInfService"></property>
+	</bean>
+	
+	<bean id="induction" class="com.neusoft.web.InductionAction"
+		scope="prototype">
+		<property name="emps" ref="employeeInfService"></property>
+	</bean>
+	
+	<bean id="family" class="com.neusoft.web.FamilyAction"
+	scope="prototype">
+		<property name="familyService" ref="familyService"></property>
+	</bean>
+	
+	<bean id="career" class="com.neusoft.web.CareerAction"
+	scope="prototype">
+		<property name="careerService" ref="careerService"></property>
+	</bean>
+	
+	<bean id="language" class="com.neusoft.web.LanguageAction"
+	scope="prototype">
+		<property name="languageService" ref="languageService"></property>
+	</bean>
+	
+</beans>

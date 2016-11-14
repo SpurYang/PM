@@ -1,0 +1,33 @@
+package com.neusoft.service.impl;
+
+import com.neusoft.dao.LanguageDao;
+import com.neusoft.model.Language;
+import com.neusoft.service.LanguageService;
+
+public class LanguageServiceImpl implements LanguageService{
+	
+	private LanguageDao languageDao ;
+	
+	public void setLanguageDao(LanguageDao languageDao) {
+		
+		this.languageDao = languageDao;
+	}
+
+	public void save(Language la) {
+		languageDao.save(la);
+	}
+
+	@Override
+	public void delete(Language la) {
+		// TODO Auto-generated method stub
+		languageDao.delete(languageDao.findById(la.getEId()));
+		
+	}
+//
+//	@Override
+//	public void update(Language la) {
+//		// TODO Auto-generated method stub
+//		languageDao.update(la);
+//
+//	}
+}

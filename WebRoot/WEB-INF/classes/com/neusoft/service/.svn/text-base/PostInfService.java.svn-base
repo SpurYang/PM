@@ -1,0 +1,10 @@
+package com.neusoft.service;
+
+import com.neusoft.model.PostInf;
+
+public interface PostInfService {
+	
+	
+	public void save(PostInf pi); 
+
+}

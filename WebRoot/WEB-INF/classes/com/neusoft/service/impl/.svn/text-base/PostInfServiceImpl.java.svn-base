@@ -1,0 +1,51 @@
+package com.neusoft.service.impl;
+
+import java.util.List;
+
+import com.neusoft.dao.PostInfDao;
+import com.neusoft.dao.impl.GenericDaoHibernate;
+import com.neusoft.model.PostInf;
+
+public class PostInfServiceImpl implements PostInfDao {
+	
+	private PostInfDao postinfDao;
+
+	public void setPostinfDao(PostInfDao postinfDao) {
+		this.postinfDao = postinfDao;
+	}
+	
+	public void savePostInfDao(PostInf pi){
+		postinfDao.save(pi);
+	}
+
+	@Override
+	public void delete(PostInf entity) {
+		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
+	public List<PostInf> findAll() {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public PostInf findById(Integer id) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public PostInf save(PostInf entity) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public void update(PostInf entity) {
+		// TODO Auto-generated method stub
+		
+	}
+
+}

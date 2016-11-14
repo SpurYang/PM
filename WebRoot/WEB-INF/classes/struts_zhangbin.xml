@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC
+    "-//Apache Software Foundation//DTD Struts Configuration 2.0//EN"
+    "http://struts.apache.org/dtds/struts-2.0.dtd">
+
+<struts>
+		<!-- 设置Spring的IoC容器管理Struts中的action -->
+	<constant name="struts.objectFactory" value="spring" />
+	<package name="poatback" extends="struts-default" namespace="/postback">
+		<action name="postbackAction" class="postback" method="add">
+			<result name="success" type="redirect">/index.jsp</result>
+			<result name="error">/error.jsp</result>
+		</action>
+		<action name="postbackAction1" class="postback" method="delet">
+			<result name="success" type="redirect">/index.jsp</result>
+			<result name="error">/error.jsp</result>
+		</action>
+		<action name="postbackAction2" class="postback" method="UpDate">
+			<result name="success" type="redirect">/index.jsp</result>
+			<result name="error">/error.jsp</result>
+		</action>
+		<action name="postbackAction3" class="deptback" method="deletDept">
+			<result name="success" type="redirect">/index.jsp</result>
+			<result name="error">/error.jsp</result>
+		</action>
+		<action name="postbackAction5" class="deptback" method="UpDateDept">
+			<result name="success" type="redirect">/index.jsp</result>
+			<result name="error">/error.jsp</result>
+		</action>
+		
+	</package>
+
+	<package name="deptback" extends="struts-default" namespace="/deptback">
+		<action name="deptbackAction" class="deptback" method="addDeptback">
+			<result name="success" type="redirect">/index.jsp</result>
+			<result name="editordept" type="redirect">/error.jsp</result>
+		</action>
+		
+	</package>
+	
+	<package name="postbackfind" extends="struts-default" namespace="/postbackfind">
+		<action name="postbackfindAction" class="postbackfind" method="findPost">
+			<result name="success" type="redirect">/ShowEmpTransfer.jsp</result>
+			<result name="editor" type="redirect">/EmpTransfer.jsp</result>
+		 </action>
+		
+	</package>
+	
+	<package name="deptbackfind" extends="struts-default" namespace="/deptbackfind">
+		<action name="postbackfindAction" class="deptbackfind" method="findDsEid">
+			<result name="success" type="redirect">/ShowDeptBackr.jsp</result>
+			<result name="editordept" type="redirect">/DeptTransfer.jsp</result>
+		 </action>
+		
+	</package>
+</struts>

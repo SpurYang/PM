@@ -1,0 +1,392 @@
+package com.neusoft.web;
+
+import com.neusoft.model.EmployeeInf;
+import com.neusoft.service.EmployeeInfService;
+import com.opensymphony.xwork2.ActionContext;
+import com.opensymphony.xwork2.ActionSupport;
+
+public class EmpAction extends ActionSupport {
+
+	private static final long serialVersionUID = 1L;
+
+	private EmployeeInf empInf;
+	private EmployeeInfService emps;
+	private Integer id;
+	private Integer EId;
+	private String EName;
+	private String ESex;
+	private String EBithday;
+	private String ESid;
+	private String EDept;
+	private String EPost;
+	private String EIndate;
+	private String ECardate;
+	private String EFormat;
+	private String ESource;
+	private String EPolitical;
+	private String ENation;
+	private String ENaresidence;
+	private String EPhone;
+	private String EEmail;
+	private Long EHeight;
+	private String EBlood;
+	private String EMarstatus;
+	private String EBirthplace;
+	private String ERegplace;
+	private String ERecord;
+	private String EDegree;
+	private String ESchool;
+	private String EProfession;
+	private String EGradate;
+	private String ETrialstatus;
+	private String ETrstartdate;
+	private String ETrenddate;
+
+	public void setEmps(EmployeeInfService emps) {
+		this.emps = emps;
+	}
+
+	public EmployeeInf getEmpInf() {
+		return empInf;
+	}
+
+	public void setEmpInf(EmployeeInf empInf) { 
+		this.empInf = empInf;
+	}
+
+	public void setEId(Integer id) {
+		EId = id;
+	}
+	
+	public Integer getEId() {
+		return EId;
+	}
+
+	public void setEid(Integer eid) {
+		EId = eid;
+	}
+
+	public String getEName() {
+		return EName;
+	}
+
+	public void setEName(String name) {
+		EName = name;
+	}
+
+	public String getESex() {
+		return ESex;
+	}
+
+	public void setESex(String sex) {
+		ESex = sex;
+	}
+
+	public String getEBithday() {
+		return EBithday;
+	}
+
+	public void setEBithday(String bithday) {
+		EBithday = bithday;
+	}
+
+	public String getESid() {
+		return ESid;
+	}
+
+	public void setESid(String sid) {
+		ESid = sid;
+	}
+
+	public String getEDept() {
+		return EDept;
+	}
+
+	public void setEDept(String dept) {
+		EDept = dept;
+	}
+
+	public String getEPost() {
+		return EPost;
+	}
+
+	public void setEPost(String post) {
+		EPost = post;
+	}
+
+	public String getEIndate() {
+		return EIndate;
+	}
+
+	public void setEIndate(String indate) {
+		EIndate = indate;
+	}
+
+	public String getECardate() {
+		return ECardate;
+	}
+
+	public void setECardate(String cardate) {
+		ECardate = cardate;
+	}
+
+	public String getEFormat() {
+		return EFormat;
+	}
+
+	public void setEFormat(String format) {
+		EFormat = format;
+	}
+
+	public String getESource() {
+		return ESource;
+	}
+
+	public void setESource(String source) {
+		ESource = source;
+	}
+
+	public String getEPolitical() {
+		return EPolitical;
+	}
+
+	public void setEPolitical(String political) {
+		EPolitical = political;
+	}
+
+	public String getENation() {
+		return ENation;
+	}
+
+	public void setENation(String nation) {
+		ENation = nation;
+	}
+
+	public String getENaresidence() {
+		return ENaresidence;
+	}
+
+	public void setENaresidence(String naresidence) {
+		ENaresidence = naresidence;
+	}
+
+	public String getEPhone() {
+		return EPhone;
+	}
+
+	public void setEPhone(String phone) {
+		EPhone = phone;
+	}
+
+	public Long getEHeight() {
+		return EHeight;
+	}
+
+	public void setEHeight(Long height) {
+		EHeight = height;
+	}
+
+	public String getEBlood() {
+		return EBlood;
+	}
+
+	public void setEBlood(String blood) {
+		EBlood = blood;
+	}
+
+	public String getEBirthplace() {
+		return EBirthplace;
+	}
+
+	public void setEBirthplace(String birthplace) {
+		EBirthplace = birthplace;
+	}
+
+	public String getERegplace() {
+		return ERegplace;
+	}
+
+	public void setERegplace(String regplace) {
+		ERegplace = regplace;
+	}
+
+	public String getERecord() {
+		return ERecord;
+	}
+
+	public void setERecord(String record) {
+		ERecord = record;
+	}
+
+	public String getEDegree() {
+		return EDegree;
+	}
+
+	public void setEDegree(String degree) {
+		EDegree = degree;
+	}
+
+	public String getESchool() {
+		return ESchool;
+	}
+
+	public void setESchool(String school) {
+		ESchool = school;
+	}
+
+	public String getEProfession() {
+		return EProfession;
+	}
+
+	public void setEProfession(String profession) {
+		EProfession = profession;
+	}
+
+	public String getEGradate() {
+		return EGradate;
+	}
+
+	public void setEGradate(String gradate) {
+		EGradate = gradate;
+	}
+
+	public String getETrialstatus() {
+		return ETrialstatus;
+	}
+
+	public void setETrialstatus(String trialstatus) {
+		ETrialstatus = trialstatus;
+	}
+
+	public String getETrstartdate() {
+		return ETrstartdate;
+	}
+
+	public void setETrstartdate(String trstartdate) {
+		ETrstartdate = trstartdate;
+	}
+
+	public String getETrenddate() {
+		return ETrenddate;
+	}
+
+	public void setETrenddate(String trenddate) {
+		ETrenddate = trenddate;
+	}
+
+	public EmployeeInfService getEmps() {
+		return emps;
+	}
+
+	public String getEEmail() {
+		return EEmail;
+	}
+
+	public String getEMarstatus() {
+		return EMarstatus;
+	}
+	
+	public Integer getId() {
+		return id;
+	}
+
+	public void setId(Integer id) {
+		this.id = id;
+	}
+	
+	public String isDetailedMessage() {
+		EmployeeInf ei = emps.detailedMessage(this.getId());
+		if (ei == null) {
+			return "error";
+		} else {
+			ActionContext.getContext().getSession().put("employeeInf", ei);
+			return "success";
+		}
+	}
+	
+	public String isAdd() {
+		/*empInf.getEName();
+		empInf.getESex();
+		empInf.getEBithday();
+		empInf.getESid();
+		empInf.getEDept();
+		empInf.getEPost();
+		empInf.getEIndate();
+		empInf.getECardate();
+		empInf.getEFormat();
+		empInf.getESource();
+		empInf.getEPolitical();
+		empInf.getENation();
+		empInf.getENaresidence();
+		empInf.getEPhone();
+		empInf.getEEmail();
+		empInf.getEHeight();
+		empInf.getEBlood();
+		empInf.getEMarstatus();
+		empInf.getEBirthplace();
+		empInf.getERegplace();
+		empInf.getERecord();
+		empInf.getEDegree();
+		empInf.getESchool();
+		empInf.getEProfession();
+		empInf.getEGradate();
+		empInf.getETrialstatus();
+		empInf.getETrstartdate();
+		empInf.getETrenddate();*/
+		emps.save(this.getEName(),this.getESex(),this.getEBithday(),
+				this.getESid(),this.getEDept(),this.getEPost(),this.getEIndate(),
+				this.getECardate(),this.getEFormat(),this.getESource(),this.getEPolitical(),
+				this.getENation(),this.getENaresidence(),this.getEPhone(),this.getEEmail(),
+				this.getEHeight(),this.getEBlood(),this.getEMarstatus(),this.getEBirthplace(),
+				this.getERegplace(),this.getERecord(),this.getEDegree(),this.getESchool(),
+				this.getEProfession(),this.getEGradate(),this.getETrialstatus(),this.getETrstartdate(),
+				this.getETrenddate(),this.getEId());
+		return "success";
+	}
+	public String isUpdate() {
+		
+		/*empInf.getESex();
+		empInf.getEBithday();
+		empInf.getESid();
+		empInf.getEDept();
+		empInf.getEPost();
+		empInf.getEIndate();
+		empInf.getECardate();
+		empInf.getEFormat();
+		empInf.getESource();
+		empInf.getEPolitical();
+		empInf.getENation();
+		empInf.getENaresidence();
+		empInf.getEPhone();
+		empInf.getEEmail();
+		empInf.getEHeight();
+		empInf.getEBlood();
+		empInf.getEMarstatus();
+		empInf.getEBirthplace();
+		empInf.getERegplace();
+		empInf.getERecord();
+		empInf.getEDegree();
+		empInf.getESchool();
+		empInf.getEProfession();
+		empInf.getEGradate();
+		empInf.getETrialstatus();
+		empInf.getETrstartdate();
+		empInf.getETrenddate();*/
+		
+		
+		emps.updateById(this.getEName(),this.getESex(),this.getEBithday(),
+				this.getESid(),this.getEDept(),this.getEPost(),this.getEIndate(),
+				this.getECardate(),this.getEFormat(),this.getESource(),this.getEPolitical(),
+				this.getENation(),this.getENaresidence(),this.getEPhone(),this.getEEmail(),
+				this.getEHeight(),this.getEBlood(),this.getEMarstatus(),this.getEBirthplace(),
+				this.getERegplace(),this.getERecord(),this.getEDegree(),this.getESchool(),
+				this.getEProfession(),this.getEGradate(),this.getETrialstatus(),this.getETrstartdate(),
+				this.getETrenddate(),this.getEId());
+		return "success";
+	}
+
+
+
+	
+
+}

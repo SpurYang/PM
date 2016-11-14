@@ -1,0 +1,41 @@
+package com.neusoft.dao.impl;
+
+import java.util.List;
+
+import com.neusoft.dao.CareerDao;
+import com.neusoft.model.CareerInf;
+import com.neusoft.model.Language;
+
+public class CareerHibernate extends GenericDaoHibernate<CareerInf, Integer>implements CareerDao {
+
+//	@Override
+//	public void delete(CareerInf entity) {
+//		// TODO Auto-generated method stub
+//
+//	}
+//
+//	@Override
+//	public List<CareerInf> findAll() {
+//		// TODO Auto-generated method stub
+//		return null;
+//	}
+//
+//	@Override
+	public CareerInf findById(long id) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+//	@Override
+//	public CareerInf save(CareerInf entity) {
+//		// TODO Auto-generated method stub
+//		return null;
+//	}
+//
+//	@Override
+//	public void update(CareerInf entity) {
+//		// TODO Auto-generated method stub
+//
+//	}
+
+}

@@ -1,0 +1,20 @@
+package com.neusoft.service.impl;
+
+import com.neusoft.dao.DeptInfDao;
+import com.neusoft.model.DeptInf;
+import com.neusoft.service.DeptInfService;
+
+public class DeptInfServiceImpl implements DeptInfService {
+	private DeptInfDao deptinfDao;
+	
+
+
+	public void setDeptinfDao(DeptInfDao deptinfDao) {
+		this.deptinfDao = deptinfDao;
+	}
+
+	
+      public void save(DeptInf di) {
+		deptinfDao.save(di);
+	}
+}

@@ -1,0 +1,8 @@
+package com.neusoft.dao;
+
+import com.neusoft.model.EmployeeInf;
+
+public interface EmployeeInfDao extends GenericDao<EmployeeInf, Integer>{
+	
+	
+}

@@ -1,0 +1,23 @@
+package com.neusoft.service.impl;
+
+import java.util.List;
+
+import com.neusoft.dao.EmployeeInfDao;
+import com.neusoft.model.EmployeeInf;
+import com.neusoft.service.EmployeeInfService;
+
+public class EmployeeInfServiceImpl implements EmployeeInfService {
+
+	private EmployeeInfDao empInfDao;
+
+	public void setEmpInfDao(EmployeeInfDao empInfDao) {
+		this.empInfDao = empInfDao;
+	}
+
+	@Override
+	public List<EmployeeInf> getMessage() {
+
+		return empInfDao.findAll();
+	}
+
+}

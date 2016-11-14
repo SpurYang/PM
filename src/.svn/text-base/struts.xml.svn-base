@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC
+    "-//Apache Software Foundation//DTD Struts Configuration 2.0//EN"
+    "http://struts.apache.org/dtds/struts-2.0.dtd">
+
+<struts>
+		<!-- 设置Spring的IoC容器管理Struts中的action -->
+	<constant name="struts.objectFactory" value="spring" />
+	<package name="guest" extends="struts-default" namespace="/">
+		
+		<action name="adminAction" class="admin" method="login">
+			<result name="success">/indexENTER.jsp</result>
+			<result name="error">/login_error.jsp</result>
+		</action>
+		
+		<action name="GetMessageAction" class="employeeInf" method="isGetMessage">
+			<result name="success">/Message.jsp</result>
+			<result name="error">/error.jsp</result>
+		</action>
+		
+		
+	</package>
+	<include file="strutswzr.xml"></include>
+</struts>

@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC
+    "-//Apache Software Foundation//DTD Struts Configuration 2.0//EN"
+    "http://struts.apache.org/dtds/struts-2.0.dtd">
+
+<struts>
+		<!-- 设置Spring的IoC容器管理Struts中的action -->
+	<constant name="struts.objectFactory" value="spring" />
+	<package name="emp" extends="struts-default" namespace="/">
+		
+		<action name="adminAction" class="admin" method="login">
+			<result name="success">/indexENTER.jsp</result>
+			<result name="error">/login_error.jsp</result>
+		</action>
+		<action name="adminAction_2" class="admin" method="register">
+			<result name="success">/indexENTER.jsp</result>
+			<result name="error">/login_error.jsp</result>
+		</action>
+		
+		<action name="GetMessageAction" class="employeeInf" method="isGetMessage">
+			<result name="success">/Message.jsp</result>
+			<result name="error">/error.jsp</result>
+		</action>
+		
+		<action name="GetMessageJobAction" class="addemployeeInf" method="isGetMessage">
+			<result name="success" type="redirect">/AddJob.jsp</result>
+			<result name="error">/error.jsp</result>
+		</action>
+		
+		<action name="GetDetailedMessageAction" class="empDetailedMessage" method="isDetailedMessage">
+			<result name="success">/DetailedMessage.jsp</result>
+			<result name="error">/error.jsp</result>
+		</action>
+		
+		<action name="EmpAction" class="emp" method="isDetailedMessage">
+			<result name="success">/EmpEditor.jsp</result>
+		</action>
+		
+		<action name="EmpAction_2" class="emp" method="isDelete">
+			<result name="success">/index.jsp</result>
+		</action>
+		
+		<action name="EmpAction_3" class="emp" method="isAdd">
+			<result name="success">/AddJob.jsp</result>
+		</action>
+		
+		<action name="EmpAction_4" class="emp" method="isDetailedMessage">
+			<result name="success">/Induction.jsp</result>
+		</action>
+		
+		<action name="UpdateEmpAction" class="emp_2" method="isUpdate">
+			<result name="success" type="redirect">/Message.jsp</result>
+		</action>
+		
+		<action name="InductionAction" class="induction" method="isInduction">
+			<result name="success">/index.jsp</result>
+		</action>
+		
+	</package>
+</struts>

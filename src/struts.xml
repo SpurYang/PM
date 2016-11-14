@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC
+    "-//Apache Software Foundation//DTD Struts Configuration 2.0//EN"
+    "http://struts.apache.org/dtds/struts-2.0.dtd">
+
+<struts>
+		<!-- 设置Spring的IoC容器管理Struts中的action -->
+	<constant name="struts.objectFactory" value="spring" />
+	<package name="cyx" extends="struts-default" namespace="/">
+		
+		
+	</package>
+	<include file="strutswzr.xml"></include>
+	<include file="strutscyx.xml"></include>
+	<include file="struts-addlanguage.xml"></include>
+	<include file="strutstjh.xml"></include>
+	<include file="struts_zhangbin.xml"></include>
+</struts>

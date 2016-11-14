@@ -1,0 +1,8 @@
+package com.neusoft.dao;
+
+import com.neusoft.model.Language;
+
+
+public interface LanguageDao extends GenericDao<Language, Integer>{
+
+}

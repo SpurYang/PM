@@ -1,0 +1,12 @@
+package com.neusoft.service;
+
+import java.util.List;
+
+import com.neusoft.model.CareerInf;
+
+public interface CareerService {
+	public void save(CareerInf ca);
+	public void delete(CareerInf ca);
+	public List<CareerInf> show();
+
+}

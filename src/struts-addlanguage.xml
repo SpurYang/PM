@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC
+    "-//Apache Software Foundation//DTD Struts Configuration 2.0//EN"
+    "http://struts.apache.org/dtds/struts-2.0.dtd">
+
+<struts>
+		<!-- 设置Spring的IoC容器管理Struts中的action -->
+	<constant name="struts.objectFactory" value="spring" />
+	
+		<package name="isadd" extends="struts-default" namespace="/language">
+		<action name="languageAction" class="language" method="isadd">
+			<result name="success">/login_success.jsp</result>
+			<result name="error">/login_error.jsp</result>
+		</action>
+		<action name="lashow" class="language" method="isshow">
+		<result name="success">/EnglishTalent.jsp</result>
+			<result name="error">/login_error.jsp</result>
+		</action>
+		<action name="ladelete" class="language" method="isdelete">
+		<result name="success">/login_success.jsp</result>
+		<result name="error">/login_error.jsp</result>
+		</action>
+		<action name="lachange" class="language" method="ischange">
+		<result name="success">/login_success.jsp</result>
+		<result name="error">/login_error.jsp></result>
+		</action>
+		<action name="lafind" class="language" method="find">
+		<result name="success">/ChangeLanguage.jsp</result>
+		<result name="error">/login_error.jsp></result>
+		</action>
+	</package>
+	<package name="add" extends="struts-default" namespace="/career">
+		<action name="careerAction" class="career" method="add">
+			<result name="success">/login_success.jsp</result>
+			<result name="error">/login_error.jsp</result>
+		</action>
+		<action name="showAction" class="career" method="isshow">
+			<result name="success">/Career.jsp</result>
+			<result name="error">/login_error.jsp</result>
+		</action>
+		<action name="deleteAction" class="career" method="isdelete">
+			<result name="success">/login_success.jsp</result>
+			<result name="error">/login_error.jsp</result>
+		</action>
+		<action name="changeAction" class="career" method="ischange">
+		<result name="success">/login_success.jsp</result>
+		<result name="error">/login_error.jsp</result>
+		</action>
+		<action name="findAction" class="career" method="find">
+		<result name="success">/ChangeCareer.jsp</result>
+		<result name="error">/login_error.jsp</result>
+		</action>
+	</package>
+	<package name="fadd" extends="struts-default" namespace="/family">
+		<action name="familyAction" class="family" method="add">
+			<result name="success">/login_success.jsp</result>
+			<result name="error">/login_error.jsp</result>
+		</action>
+		<action name="fashow" class="family" method="isshow">
+			<result name="success">/FamilyRelationship.jsp</result>
+			<result name="error">/login_error.jsp</result>
+		</action>
+		<action name="fadelete" class="family" method="isdelete">
+		<result name="success">/login_success.jsp</result>
+			<result name="error">/login_error.jsp</result>
+		</action>
+		<action name="fachange" class="family" method="ischange">
+		<result name="success">/login_success.jsp</result>
+		<result name="error">/login_error.jsp></result>
+		</action>
+		<action name="fafind" class="family" method="find">
+		<result name="success">/ChangeFamily.jsp</result>
+		<result name="error">/login_error.jsp</result>
+		</action>
+	</package>
+	
+</struts>

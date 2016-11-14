@@ -1,0 +1,10 @@
+package com.neusoft.dao.impl;
+
+import com.neusoft.dao.EmployeeInfDao;
+import com.neusoft.model.EmployeeInf;
+
+public class EmployeeInfDaoHibernate extends GenericDaoHibernate<EmployeeInf, Integer> implements EmployeeInfDao{
+
+	
+	
+}

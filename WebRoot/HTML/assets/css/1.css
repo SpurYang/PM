@@ -1,0 +1,126 @@
+/* CSS Document */
+* {
+	outline:none !important;
+	-moz-outline: none !important;
+}
+html, body{height:100%}
+body {
+	overflow-x: hidden;
+	margin-top: 0px; font-family: 'Open Sans', sans-serif; font-size:12px; color:#666;
+}
+.widget-title, .modal-header, .table th, div.dataTables_wrapper .ui-widget-header {
+	 background:#efefef;
+	border-bottom: 1px solid #CDCDCD;
+	height: 36px;  
+}
+.widget-title .nav-tabs {
+	border-bottom: 0 none; 
+}
+.widget-title .nav-tabs li a {
+	border-bottom: medium none !important;
+	border-left: 1px solid #DDDDDD;
+		border-radius: 0 0 0 0;
+	border-right: 1px solid #DDDDDD;
+	border-top: medium none;
+	color: #999999;
+	margin: 0;
+	outline: medium none;
+	padding: 9px 10px 8px;
+	font-weight: bold; 
+	text-shadow: 0 1px 0 #FFFFFF;
+}
+.widget-title .nav-tabs li:first-child a {
+	border-left: medium none !important;
+}
+.widget-title .nav-tabs li a:hover {
+	background-color: transparent !important;
+	border-color: #D6D6D6;
+	border-width: 0 1px;
+	color: #2b2b2b;
+}
+.widget-title .nav-tabs li.active a {
+	background-color: #F9F9F9 !important;
+	color: #444444;
+}
+.widget-title span.icon {
+	padding: 9px 10px 7px 11px;
+	float: left; border-right:1px solid #dadada;
+}
+.widget-title h5 {
+	color: #666;
+	float: left;
+	font-size: 12px;
+	font-weight: bold;
+	padding: 12px;
+	line-height: 12px;
+	margin: 0;
+}
+.widget-title .buttons {
+	float: right;
+	margin: 8px 10px 0 0;
+}
+.widget-title .label {
+	padding: 3px 5px 2px;
+	float: right;
+	margin: 9px 11px 0 0;
+	box-shadow: 0 1px 2px rgba(0,0,0,0.3) inset, 0 1px 0 #ffffff;
+}
+.widget-content {
+	padding:15px;
+	border-bottom: 1px solid #cdcdcd;
+}
+.widget-box.widget-plain .widget-content {
+	padding: 12px 0 0;
+}
+.widget-box.collapsible .collapse.in .widget-content {
+	border-bottom: 1px solid #CDCDCD;
+}
+.nopadding {
+	padding: 0 !important;
+}
+.nopadding .table {
+	margin-bottom: 0;
+}
+.nopadding .table-bordered {
+	border: 0;
+}
+.form-horizontal .controls {
+	margin-left: 200px;
+	padding: 10px 0;
+}
+.form-horizontal .control-group {
+	border-top: 1px solid #ffffff;
+	border-bottom: 1px solid #eeeeee;
+	margin-bottom: 0;
+}
+.form-horizontal .control-group:last-child {
+	border-bottom: 0;
+}
+.form-horizontal .control-label {
+	padding-top: 15px;
+	width: 180px;
+}
+.form-horizontal .controls {
+	margin-left: 200px;
+	padding: 5px 0;
+}
+.form-horizontal input[type=text], .form-horizontal input[type=password], .form-horizontal textarea {
+}
+.row-fluid .span20 {
+	width:97.8%
+}
+.form-horizontal .form-actions {
+	margin-top: 0;
+	margin-bottom: 0;
+}
+
+
+
+
+
+
+
+textbox1 {
+	text-align: left;
+	vertical-align: bottom;
+}

@@ -1,0 +1,23 @@
+package com.neusoft.service;
+
+import com.neusoft.model.Language;
+
+public interface LanguageService {
+	/**
+	 * 增加信息
+	 * @param language
+	 */
+	public void save(Language la);
+//	/**
+//	 * 删除信息
+//	 */
+	public void delete(Language la);
+//	/**
+//	 * 修改信息
+//	 */
+//	public void update(Language la);
+	/**
+	 * 显示信息
+	 */
+
+}

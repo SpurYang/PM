@@ -1,0 +1,47 @@
+package com.neusoft.web;
+
+import java.text.SimpleDateFormat;
+import java.util.Date;
+
+import com.neusoft.model.DeptInf;
+import com.neusoft.service.DeptInfService;
+import com.opensymphony.xwork2.ActionSupport;
+
+public class DeptInfAction extends ActionSupport {
+
+	private static final long serialVersionUID = 1L;
+	
+	private DeptInf deptinf;
+	private DeptInfService deptinfService;
+	
+	
+	public DeptInf getDeptinf() {
+		return deptinf;
+	}
+	
+	public void setDeptinf(DeptInf deptinf) {
+		this.deptinf = deptinf;
+	}
+	
+	public void setDeptinfService(DeptInfService deptinfService) {
+		this.deptinfService = deptinfService;
+	}
+	
+	public String save() {
+		SimpleDateFormat date = new SimpleDateFormat("yyyy-MM-dd:hh:mm:ss");
+		deptinf.setDDate(date.format(new Date()));
+		
+		deptinf.getDId();
+		deptinf.getDName();
+		deptinf.getDPhone();
+		deptinf.getDFax();
+		deptinf.getDType();
+		deptinf.getDNote();
+		deptinf.getDSuperior();
+		
+		deptinfService.save(deptinf);
+		System.out.println("success save");
+		return "success";
+	}
+
+}

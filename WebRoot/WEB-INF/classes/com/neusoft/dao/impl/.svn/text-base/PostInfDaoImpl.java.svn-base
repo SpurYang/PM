@@ -1,0 +1,8 @@
+package com.neusoft.dao.impl;
+
+import com.neusoft.dao.PostInfDao;
+import com.neusoft.model.PostInf;
+
+public class PostInfDaoImpl extends GenericDaoHibernate<PostInf, Integer>  implements PostInfDao{
+
+}

@@ -1,0 +1,11 @@
+package com.neusoft.service;
+
+import java.util.List;
+
+import com.neusoft.model.EmployeeInf;
+
+public interface EmployeeInfService {
+	 
+	public List<EmployeeInf> getMessage();
+	
+}

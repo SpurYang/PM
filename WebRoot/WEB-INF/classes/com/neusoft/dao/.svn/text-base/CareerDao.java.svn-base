@@ -1,0 +1,9 @@
+package com.neusoft.dao;
+
+import com.neusoft.model.CareerInf;
+
+
+public interface CareerDao extends GenericDao<CareerInf, Integer>{
+	public CareerInf findById(long id);
+
+}

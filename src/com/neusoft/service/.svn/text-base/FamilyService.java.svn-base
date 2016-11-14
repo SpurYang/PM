@@ -1,0 +1,8 @@
+package com.neusoft.service;
+
+import com.neusoft.model.FamilyRelation;
+
+public interface FamilyService {
+	public void save(FamilyRelation fa);
+
+}

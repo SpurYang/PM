@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC
+    "-//Apache Software Foundation//DTD Struts Configuration 2.0//EN"
+    "http://struts.apache.org/dtds/struts-2.0.dtd">
+
+<struts>
+		<!-- 设置Spring的IoC容器管理Struts中的action -->
+		<constant name="struts.objectFactory" value="spring" />
+		
+			<package name="finddept" extends="struts-default" namespace="/">	
+	<action name="finddeptAction" class="deptinf" method="finddept">
+	   	<result name="success" type="redirect">/Message.jsp</result>
+			<result name="error">/error.jsp</result>
+		</action>
+	</package>
+	
+	    <package name="updatepost" extends="struts-default" namespace="/">	
+	<action name="updatepostinf" class="updatepostinf" method="UpdatePostInf">
+	   	<result name="success">/index.jsp</result>
+			<result name="error">/error.jsp</result>
+		</action>
+	</package>
+	
+		<package name="postfind" extends="struts-default" namespace="/">	
+	<action name="postfindAction" class="postinf" method="find">
+	   	<result name="success" type="redirect">/PostEditor.jsp</result>
+			<result name="error">/error.jsp</result>
+		</action>
+	</package>
+		
+	<package name="postdelete" extends="struts-default" namespace="/">	
+	<action name="postdeleteAction" class="postinf" method="deletePostInf">
+	   	<result name="success" >/index.jsp</result>
+			<result name="error">/error.jsp</result>
+		</action>
+	</package>
+	
+	<package name="post" extends="struts-default" namespace="/postinf">	
+	<action name="postinfAction" class="postinf" method="save">
+	   	<result name="success" type="redirect">/index.jsp</result>
+			<result name="error">/error.jsp</result>
+		</action>
+	</package>
+	
+	<package name="postfindall" extends="struts-default" namespace="/">
+	<action name="postinfAction" class="postinf" method="findAll">
+	   	<result name="success" type="redirect">/Post.jsp</result>
+			<result name="error">/error.jsp</result>
+			</action>
+			</package>
+			
+			<package name="updatedept" extends="struts-default" namespace="/">	
+	<action name="updatedeptinf" class="updatedeptinf" method="UpdateDeptInf">
+	   	<result name="success">/index.jsp</result>
+			<result name="error">/error.jsp</result>
+		</action>
+	</package>
+	
+		<package name="deptfind" extends="struts-default" namespace="/">	
+	<action name="deptfindAction" class="deptinf" method="find">
+	   	<result name="success" type="redirect">/DeptEditor.jsp</result>
+			<result name="error">/error.jsp</result>
+		</action>
+	</package>
+			
+			<package name="deptdelete" extends="struts-default" namespace="/">	
+	<action name="deptdeleteAction" class="deptinf" method="deleteDeptInf">
+	   	<result name="success" >/index.jsp</result>
+			<result name="error">/error.jsp</result>
+		</action>
+	</package>
+	
+	
+	<package name="dept" extends="struts-default" namespace="/deptinf">	
+	<action name="deptinfAction" class="deptinf" method="save">
+	   	<result name="success"   type="redirect">/index.jsp</result>
+			<result name="error">/error.jsp</result>
+		</action>		
+	</package>	
+		<package name="deptfindall" extends="struts-default" namespace="/">
+	<action name="deptinfAction" class="deptinf" method="findAll">
+	   	<result name="success" type="redirect">/Department.jsp</result>
+			<result name="error">/error.jsp</result>
+			</action>
+			</package>
+	
+</struts>

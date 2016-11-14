@@ -1,0 +1,7 @@
+package com.neusoft.dao;
+
+import com.neusoft.model.FamilyRelation;
+
+public interface FamilyDao extends GenericDao<FamilyRelation, Integer>{
+
+}
